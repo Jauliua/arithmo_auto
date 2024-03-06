@@ -127,8 +127,8 @@ export default {
     methods: {
         log_performance(stop_reason){
             if (this.data){
-                // fetch('https://taskdifficulty.robert-spang.de/next_task', {
-                fetch('http://127.0.0.1:5051/next_task', {
+                fetch('https://taskdifficulty.robert-spang.de/next_task', {
+                // fetch('http://127.0.0.1:5051/next_task', {
                     method: 'POST',
                     headers: {
                     'Content-Type': 'application/json',
@@ -183,8 +183,8 @@ export default {
             }
         },
         loadTask(difficulty, choiceTime) {
-            // fetch('https://taskdifficulty.robert-spang.de/next_task', {
-            fetch('http://127.0.0.1:5051/next_task', {
+            fetch('https://taskdifficulty.robert-spang.de/next_task', {
+            // fetch('http://127.0.0.1:5051/next_task', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

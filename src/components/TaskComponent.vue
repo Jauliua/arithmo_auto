@@ -199,12 +199,6 @@ export default {
             return left;
         },
         getNextDifficulty(){
-            console.log('getNextDifficulty')
-            console.log('difficulty')
-            console.log(this.difficulty-1)
-            console.log(this.responseTime)
-            console.log('average_response_time[this.difficulty-1]')
-            console.log(average_response_time[this.difficulty-1])
             // new_avg_response_time = (this.diff_average_response_times[this.difficulty-1]*this.diff_nr_task_answered[this.difficulty-1] + this.responseTime)/(this.diff_nr_task_answered[this.difficulty-1]+1)
             // this.$store.commit('setDiffAverageResponseTimes', [this.difficulty-1, new_avg_response_time])
             // this.$store.commit('setNumberTasksAnswered', this.difficulty-1)
@@ -229,13 +223,7 @@ export default {
                 points_left = this.missionPoints - (this.task_points+this.currentPoints)
                 nextDifficulty= this.difficulty
             }
-            console.log('points_left')
-            console.log(points_left)
-            console.log('nextDifficulty')
-            console.log(nextDifficulty)
             nextDifficultyPoints = points[nextDifficulty-1]
-            console.log('nextDifficultyPoints')
-            console.log(nextDifficultyPoints)
             if (points_left < nextDifficultyPoints){
                 nextDifficulty = this.findFirstGreaterThanPoints(points_left)+1
                 console.log('nextDifficulty becaue points_left < nextDifficultyPoints') 
@@ -305,8 +293,8 @@ export default {
                     }
                 }
                 if (this.log_performance){
-                    // fetch('https://taskdifficulty.robert-spang.de/next_task', {
-                    fetch('http://127.0.0.1:5051/next_task', {
+                    fetch('https://taskdifficulty.robert-spang.de/next_task', {
+                    // fetch('http://127.0.0.1:5051/next_task', {
                         method: 'POST',
                         headers: {
                         'Content-Type': 'application/json',
