@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  arithmoauto_webapp:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    labels:
+      - traefik.http.routers.arithmoauto.rule=Host(`arithmoauto.robert-spang.de`)
+      - traefik.http.routers.arithmoauto.tls=true
+      - traefik.http.routers.arithmoauto.tls.certresolver=lets-encrypt
+      - traefik.port=8080
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
