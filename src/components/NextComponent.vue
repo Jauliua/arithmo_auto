@@ -87,6 +87,7 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
+    max-width: 300px;
 }
 #next_text {
     z-index: 1;
@@ -100,7 +101,6 @@ export default {
     position: relative;
     letter-spacing: 0.1em;
     font-weight: 700;
-
-    font-size: 40px;
+    font-size: 2em;
 }
 </style>
